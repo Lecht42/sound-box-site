@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'tektur';
+  src:
+    url('../assets/fonts-src/Tektur/Tektur.woff2') format('woff2'),
+    url('../assets/fonts-src/Tektur/Tektur.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'prosto-one';
+  src:
+    url('../assets/fonts-src/ProstoOne/ProstoOne.woff2') format('woff2'),
+    url('../assets/fonts-src/ProstoOne/ProstoOne.woff') format('woff');
+  font-display: swap;
+}

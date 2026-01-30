@@ -1,0 +1,35 @@
+@import 'tailwindcss';
+@import "./styles/fonts.css";
+
+@theme {
+  --font-tektur: 'tektur', sans-serif;
+  --font-prosto-one: 'prosto-one', sans-serif;
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-text: var(--text);
+  --color-link: var(--link);
+}
+
+:root {
+  --primary: #f4d508;
+  --secondary: #171a21;
+  --background: #0e0f12;
+  --card: #16181F;
+  --text: #ffffff;
+  --link: #326DED;
+}
+
+
+@layer base {
+  body {
+    @apply bg-background flex flex-col justify-start items-center;
+  }
+  #app {
+    @apply px-4 w-full md:w-3xl flex flex-col items-center justify-start;
+  }
+  button {
+    @apply cursor-pointer hover:text-link;
+  }
+}
