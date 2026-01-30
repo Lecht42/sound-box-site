@@ -27,9 +27,9 @@
     @apply bg-background flex flex-col justify-start items-center;
   }
   #app {
-    @apply px-4 w-full md:w-3xl flex flex-col items-center justify-start;
+    @apply px-4 w-full lg:w-6xl flex flex-col items-center justify-start;
   }
-  button {
+  a {
     @apply cursor-pointer hover:text-link;
   }
 }
