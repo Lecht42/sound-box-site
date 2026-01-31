@@ -14,11 +14,17 @@
 
 :root {
   --primary: #f4d508;
-  --secondary: #171a21;
+  --secondary2: #171a21;
   --background: #0e0f12;
   --card: #16181F;
   --text: #ffffff;
   --link: #326DED;
+
+  --swiper-navigation-color: var(--primary);
+  --swiper-pagination-color: var(--primary);
+  --swiper-navigation-sides-offset: 1rem;
+  --swiper-pagination-bullet-width: 1rem;
+  --swiper-pagination-bullet-height: 1rem;
 }
 
 
@@ -33,7 +39,7 @@
     @apply cursor-pointer hover:text-link;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply text-center text-xl font-tektur; 
+    @apply text-center text-2xl font-tektur; 
   }
   p {
     @apply text-justify;
@@ -46,5 +52,8 @@
   }
   section {
     @apply mb-16;
+  }
+  .swiper-button-next:hover > svg, .swiper-button-prev:hover > svg {
+    @apply text-link;
   }
 }
