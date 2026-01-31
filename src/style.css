@@ -32,4 +32,19 @@
   a {
     @apply cursor-pointer hover:text-link;
   }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-center text-xl font-tektur; 
+  }
+  p {
+    @apply text-justify;
+  }
+  section {
+    @apply text-text font-prosto-one;
+  }
+  section > * {
+    @apply mb-8;
+  }
+  section {
+    @apply mb-16;
+  }
 }
