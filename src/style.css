@@ -33,14 +33,23 @@
   #app {
     @apply px-4 w-full lg:w-6xl flex flex-col items-center justify-start;
   }
-  a, a > * {
+  a, a > *, dd {
     @apply cursor-pointer hover:text-link;
+  }
+  dd {
+    @apply text-link text-center hover:underline;
+  }
+  dt {
+    @apply pr-0 md:pr-7;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply text-center text-2xl font-tektur; 
   }
   h1 {
     @apply text-black;
+  }
+  h2 {
+    @apply pb-4;
   }
   h2, h3, h4, h5, h6 {
     @apply text-white;
@@ -51,13 +60,16 @@
   section {
     @apply font-prosto-one;
   }
-  section > * {
-    @apply mb-8;
-  }
   section {
     @apply mb-16;
   }
   .swiper-button-next:hover > svg, .swiper-button-prev:hover > svg {
     @apply text-link;
+  }
+}
+
+@layer components {
+  .view {
+    @apply w-full p-4 md:p-12 text-white; 
   }
 }

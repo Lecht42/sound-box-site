@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { YandexMap, YandexMapMarker } from 'vue-yandex-maps'
 
-const officeCoordinates: [number, number] = [55.751244, 37.618423] 
+const officeCoordinates: [number, number] = [55.751244, 37.618423]
 const hasMapKey = Boolean(import.meta.env.VITE_YANDEX_MAP_API_KEY)
 </script>
 
@@ -11,18 +11,58 @@ const hasMapKey = Boolean(import.meta.env.VITE_YANDEX_MAP_API_KEY)
       <h1>Контакты</h1>
     </span>
 
-    <div v-if="hasMapKey">
-      <YandexMap class="w-full" :coordinates="officeCoordinates" :zoom="15">
-        <YandexMapMarker :coordinates="officeCoordinates">
-          <div class="bg-secondary px-4 py-2 rounded-xl shadow-md">
-            SoundBOX, примерный офис<br />
-            Москва, Красная площадь, 1
-          </div>
-        </YandexMapMarker>
-      </YandexMap>
+    <div class="view flex flex-row flex-wrap gap-8">
+      <dl class="grid grid-cols-1 md:grid-cols-2 gap-y-3">
+        <dt>Звонок бесплатный:</dt>
+        <dd>
+          <a href="tel:88005516096">
+            8 (800) 551-60-96
+          </a>
+        </dd>
+
+        <dt>Телефон офиса:</dt>
+        <dd>
+          <a href="tel:+73472588972">
+            +7 (347) 258-89-72
+          </a>
+        </dd>
+
+        <dt>Электронная почта:</dt>
+        <dd>
+          <a href="mailto:zakaz@soundekb.ru">
+            zakaz@soundekb.ru
+          </a>
+        </dd>
+
+
+        <span class="col-span-2 my-4 flex flex-row justify-around">
+          <img src="../../assets/svgs-src/telegram.svg"/>
+          <img src="../../assets/svgs-src/vkontakte.svg"/>
+          <img src="../../assets/svgs-src/whatsapp.svg"/>
+        </span>
+
+      </dl>
+
+      <div v-if="hasMapKey">
+        <YandexMap class="w-full" :coordinates="officeCoordinates" :zoom="15">
+          <YandexMapMarker :coordinates="officeCoordinates">
+            <div class="bg-secondary px-4 py-2 rounded-xl shadow-md">
+              SoundBOX, примерный офис<br />
+              Москва, Красная площадь, 1
+            </div>
+          </YandexMapMarker>
+        </YandexMap>
+      </div>
     </div>
-    <p v-else class="text-center">
-      Карта недоступна: добавьте VITE_YANDEX_MAP_API_KEY в файл .env, чтобы отобразить расположение офиса.
-    </p>
   </section>
 </template>
+
+
+<style scoped>
+img {
+  max-width: 4rem;
+  max-height: 4rem;
+  margin-inline: 0.5rem;
+  filter: ;
+}
+</style>
