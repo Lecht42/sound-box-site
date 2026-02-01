@@ -10,14 +10,8 @@ const isCurrentStyle = "text-link underline";
 
 <template>
     <span class="w-full bg-primary py-2 flex flex-row justify-around font-tektur text-lg md:text-xl">
-        <router-link :to="routes[0].path">
-            <h1 :class="isCurrent(routes[0].path) && isCurrentStyle">Главная</h1>
-        </router-link>
-        <router-link :to="routes[1].path">
-            <h1 :class="isCurrent(routes[1].path) && isCurrentStyle">Товары и услуги</h1>
-        </router-link>
-        <router-link :to="routes[2].path">
-            <h1 :class="isCurrent(routes[2].path) && isCurrentStyle">Новости</h1>
+        <router-link v-for="route in routes" :key="route.path"  :to="route.path">
+            <h1 :class="isCurrent(route.path) && isCurrentStyle">{{ route.name }}</h1>
         </router-link>
     </span>
 </template>
