@@ -8,7 +8,6 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-background: var(--background);
-  --color-text: var(--text);
   --color-link: var(--link);
 }
 
@@ -17,7 +16,6 @@
   --secondary: #171a21;
   --background: #0e0f12;
   --card: #16181F;
-  --text: #ffffff;
   --link: #326DED;
 
   --swiper-navigation-color: var(--primary);
@@ -35,17 +33,23 @@
   #app {
     @apply px-4 w-full lg:w-6xl flex flex-col items-center justify-start;
   }
-  a {
+  a, a > * {
     @apply cursor-pointer hover:text-link;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply text-center text-2xl font-tektur; 
   }
-  p {
-    @apply text-justify;
+  h1 {
+    @apply text-black;
+  }
+  h2, h3, h4, h5, h6 {
+    @apply text-white;
+  }
+  p, li {
+    @apply text-justify text-white;
   }
   section {
-    @apply text-text font-prosto-one;
+    @apply font-prosto-one;
   }
   section > * {
     @apply mb-8;
