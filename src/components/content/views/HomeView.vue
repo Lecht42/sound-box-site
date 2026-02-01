@@ -56,9 +56,7 @@ const carouselImages = computed(() =>
                 :pagination="paginationOptions as any"
             >
                 <SwiperSlide v-for="photo in carouselImages" :key="photo.src">
-                    <figure class="carousel-photo">
-                        <img class="w-full h-full object-cover" :src="photo.src" :alt="photo.alt" loading="lazy" />
-                    </figure>
+                    <img class=" block w-full h-full overflow-hidden rounded-lg" :src="photo.src" :alt="photo.alt" loading="lazy" />
                 </SwiperSlide>
             </Swiper>
         </section>
@@ -102,27 +100,3 @@ const carouselImages = computed(() =>
         </section>
     </div>
 </template>
-
-<style scoped>
-@reference "../../../style.css";
-
-.home-carousel :deep(.swiper),
-.home-carousel :deep(.swiper-wrapper),
-.home-carousel :deep(.swiper-slide) {
-  overflow: visible;
-}
-
-.home-carousel :deep(.swiper-slide) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel-photo {
-  @apply block w-full h-full overflow-hidden rounded-lg shadow-lg;
-}
-
-.carousel-photo img {
-  @apply w-full h-full object-cover;
-}
-</style>
