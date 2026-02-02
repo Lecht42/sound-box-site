@@ -1,22 +1,21 @@
 import { createApp } from 'vue'
+import VueGoogleMaps from '@fawmi/vue-google-maps'
 import './style.css'
 import App from './App.vue'
 import { router } from './router'
-import { createYmaps } from 'vue-yandex-maps'
 
 const app = createApp(App)
 
-const yandexMapApiKey = import.meta.env.VITE_YANDEX_MAP_API_KEY
-if (yandexMapApiKey) {
-  app.use(
-    createYmaps({
-      apikey: yandexMapApiKey,
-      lang: 'ru_RU',
-      version: '3.0',
-    }),
-  )
+const googleMapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
+if (googleMapsApiKey) {
+  app.use(VueGoogleMaps, {
+    load: {
+      key: googleMapsApiKey,
+      libraries: 'places',
+    },
+  })
 } else {
-  console.warn('Yandex Map API key is missing. Contacts map will be disabled.')
+  console.warn('Google Maps API key is missing. Map on Contacts page will be disabled.')
 }
 
 app.use(router).mount('#app')
