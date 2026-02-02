@@ -63,6 +63,5 @@ img {
   max-width: 4rem;
   max-height: 4rem;
   margin-inline: 0.5rem;
-  filter: ;
 }
 </style>

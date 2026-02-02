@@ -54,8 +54,8 @@
   h2, h3, h4, h5, h6 {
     @apply text-white;
   }
-  p, li {
-    @apply text-justify text-white;
+  p {
+    @apply text-justify text-white my-4;
   }
   section {
     @apply font-prosto-one;
