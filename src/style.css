@@ -38,26 +38,23 @@
   a, a > *, dd {
     @apply cursor-pointer hover:text-link;
   }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white text-lg md:text-2xl text-center font-tektur;
+  }
+  h1 {
+    @apply text-black;
+  }
+  p, li, dd, dt {
+    @apply text-sm lg:text-base text-white text-justify;
+  }
+  p, li {
+    @apply my-4;
+  }
   dd {
     @apply text-link text-center hover:underline;
   }
   dt {
     @apply pr-0 md:pr-7;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-center font-tektur; 
-  }
-  h1 {
-    @apply text-black text-lg lg:text-2xl;
-  }
-  h2 {
-    @apply pb-4;
-  }
-  h2, h3, h4, h5, h6 {
-    @apply text-white text-lg lg:text-2xl;
-  }
-  p {
-    @apply text-justify my-4 text-white text-sm lg:text-base;
   }
   section {
     @apply font-prosto-one;

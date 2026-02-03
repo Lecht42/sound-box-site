@@ -52,7 +52,7 @@ const hasGoogleMaps = Boolean(import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
     </span>
 
     <div class="view flex flex-row flex-wrap gap-8">
-      <dl class="grid grid-cols-1 md:grid-cols-2 gap-y-3 py-3">
+      <dl class="grid grid-cols-1 md:grid-cols-2 gap-y-3">
         <dt>Звонок бесплатный:</dt>
         <dd>
           <a href="tel:88005516096">
