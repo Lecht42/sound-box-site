@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import "bootstrap-icons/font/bootstrap-icons.css";
 @import "./styles/fonts.css";
 
 @theme {
@@ -8,6 +9,7 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-background: var(--background);
+  --color-card: var(--card);
   --color-link: var(--link);
 }
 
@@ -43,19 +45,19 @@
     @apply pr-0 md:pr-7;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply text-center text-2xl font-tektur; 
+    @apply text-center font-tektur; 
   }
   h1 {
-    @apply text-black;
+    @apply text-black text-lg lg:text-2xl;
   }
   h2 {
     @apply pb-4;
   }
   h2, h3, h4, h5, h6 {
-    @apply text-white;
+    @apply text-white text-lg lg:text-2xl;
   }
   p {
-    @apply text-justify text-white my-4;
+    @apply text-justify my-4 text-white text-sm lg:text-base;
   }
   section {
     @apply font-prosto-one;
@@ -70,6 +72,6 @@
 
 @layer components {
   .view {
-    @apply w-full p-4 md:p-12 text-white; 
+    @apply p-4 md:p-12 text-white; 
   }
 }

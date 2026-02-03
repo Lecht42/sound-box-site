@@ -5,7 +5,7 @@ const officePosition = { lat: 54.718861, lng: 55.9353378 }
 const cssVar = (varName: string) => {
   return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
 }
-const darkMapStyle: google.maps.MapTypeStyle[] = [
+const darkMapStyle = [
   {
     elementType: "geometry",
     stylers: [{ color: cssVar("--background") }],
@@ -75,10 +75,9 @@ const hasGoogleMaps = Boolean(import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
         </dd>
 
 
-        <span class="col-span-2 my-4 flex flex-row justify-around">
-          <img src="../../assets/svgs-src/telegram.svg" />
-          <img src="../../assets/svgs-src/vkontakte.svg" />
-          <img src="../../assets/svgs-src/whatsapp.svg" />
+        <span class="col-span-2 my-4 flex flex-row justify-around items-center">
+          <i class="bi bi-telegram social-icon" aria-label="Telegram"></i>
+          <i class="bi bi-whatsapp social-icon" aria-label="WhatsApp"></i>
         </span>
 
       </dl>
@@ -102,9 +101,14 @@ const hasGoogleMaps = Boolean(import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
 
 
 <style scoped>
-img {
-  max-width: 4rem;
-  max-height: 4rem;
+.social-icon {
+  width: 4rem;
+  height: 4rem;
+  font-size: 4rem;
   margin-inline: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
 }
 </style>
