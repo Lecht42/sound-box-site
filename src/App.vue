@@ -1,13 +1,15 @@
 <script setup lang="ts">
-  import Logo from './components/Logo.vue';
-  import Content from './components/content/Content.vue';
-  import Footer from './components/Footer.vue';
+import { ModalsContainer } from 'vue-final-modal'
+import Logo from './components/Logo.vue'
+import Content from './components/content/Content.vue'
+import Footer from './components/Footer.vue'
 </script>
 
 <template>
   <Logo />
   <Content />
   <Footer />
+  <ModalsContainer />
 </template>
 
 <style scoped>

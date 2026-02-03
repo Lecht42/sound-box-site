@@ -1,6 +1,6 @@
 @import 'tailwindcss';
-@import "bootstrap-icons/font/bootstrap-icons.css";
-@import "./styles/fonts.css";
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import './styles/fonts.css';
 
 @theme {
   --font-tektur: 'tektur', sans-serif;
@@ -17,8 +17,8 @@
   --primary: #f4d508;
   --secondary: #171a21;
   --background: #0e0f12;
-  --card: #16181F;
-  --link: #326DED;
+  --card: #16181f;
+  --link: #326ded;
 
   --swiper-navigation-color: var(--primary);
   --swiper-pagination-color: var(--primary);
@@ -27,7 +27,6 @@
   --swiper-pagination-bullet-height: 1rem;
 }
 
-
 @layer base {
   body {
     @apply bg-background flex flex-col justify-start items-center;
@@ -35,19 +34,30 @@
   #app {
     @apply px-4 w-full lg:w-6xl flex flex-col items-center justify-start;
   }
-  a, a > *, dd {
+  a,
+  a > *,
+  dd {
     @apply cursor-pointer hover:text-link;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply text-white text-lg md:text-2xl text-center font-tektur;
   }
-  h1 {
-    @apply text-black;
+  p,
+  li,
+  dd,
+  dt {
+    @apply text-sm lg:text-base text-white text-left;
   }
-  p, li, dd, dt {
-    @apply text-sm lg:text-base text-white text-justify;
+  p {
+    @apply text-justify;
   }
-  p, li {
+  p,
+  li {
     @apply my-4;
   }
   dd {
@@ -62,13 +72,21 @@
   section {
     @apply mb-16;
   }
-  .swiper-button-next:hover > svg, .swiper-button-prev:hover > svg {
+  .swiper-button-next:hover > svg,
+  .swiper-button-prev:hover > svg {
     @apply text-link;
+  }
+  button {
+    @apply rounded-xl border border-primary/30 hover:border-link px-3 py-1 text-xl text-primary font-tektur hover:text-link hover:bg-primary/10 hover:cursor-pointer;
   }
 }
 
 @layer components {
   .view {
-    @apply p-4 md:p-12 text-white; 
+    @apply p-4 md:p-12 text-white;
+  }
+
+  .social-icon {
+    @apply text-[4rem] size-4 inline-flex align-center justify-center text-primary;
   }
 }
