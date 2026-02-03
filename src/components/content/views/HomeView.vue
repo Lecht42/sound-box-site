@@ -38,12 +38,19 @@ const carouselImages = computed(() =>
                 концертов и акций.
             </p>
             <Swiper
-                class="w-full home-carousel"
+                class="w-full max-h-64vh"
                 :modules="[Navigation, Pagination, Autoplay]"
                 :slides-per-view="1"
                 :loop="true"
                 :breakpoints="{
                     768: {
+                        slidesPerView: 2,
+                        spaceBetween: 8,
+                        navigation: {
+                            enabled: true
+                        }
+                    },
+                    1024: {
                         slidesPerView: 3,
                         spaceBetween: 16,
                         navigation: {
