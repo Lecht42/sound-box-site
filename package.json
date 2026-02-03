@@ -11,6 +11,8 @@
   "dependencies": {
     "@fawmi/vue-google-maps": "^0.9.79",
     "@tailwindcss/vite": "^4.1.18",
+    "@types/google.maps": "^3.58.1",
+    "bootstrap-icons": "^1.13.1",
     "swiper": "^12.1.0",
     "tailwindcss": "^4.1.18",
     "vue": "^3.5.24",

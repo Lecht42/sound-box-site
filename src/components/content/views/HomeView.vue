@@ -28,7 +28,7 @@ const carouselImages = computed(() =>
 </script>
 
 <template>
-    <div class="font-prosto-one w-full space-y-16">
+    <div class="font-prosto-one w-full">
         <section>
             <h2>Мы готовы предоставить вам технику</h2>
             <p>
