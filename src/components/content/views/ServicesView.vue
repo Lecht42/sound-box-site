@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { URL } from 'url';
 import services from '../../../assets/data-src/services';
 </script>
 
