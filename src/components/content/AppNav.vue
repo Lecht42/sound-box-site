@@ -11,7 +11,7 @@ const isCurrentStyle = "text-link underline";
 <template>
     <span class="w-full bg-primary py-2 flex flex-row justify-around">
         <router-link v-for="route in routes" :key="route.path" :to="route.path">
-            <h1 :class="isCurrent(route.path) && isCurrentStyle">{{ route.name }}</h1>
+            <h1  class="text-black hover:text-link" :class="isCurrent(route.path) && isCurrentStyle">{{ route.name }}</h1>
         </router-link>
     </span>
 
