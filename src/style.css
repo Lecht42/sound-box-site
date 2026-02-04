@@ -85,8 +85,13 @@
   .view {
     @apply p-4 md:p-12 text-white;
   }
-
   .social-icon {
     @apply text-[4rem] size-4 inline-flex justify-center text-primary;
+  }
+  .pagination-container {
+    @apply gap-2
+  }
+  .active-page {
+    @apply bg-primary text-white;
   }
 }
