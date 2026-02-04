@@ -2,10 +2,10 @@
 import { computed } from 'vue'
 import { VueFinalModal } from 'vue-final-modal'
 import { useMarkdownContent } from '../../../../composables/useMarkdownContent'
-import type { ServiceItem } from '../../../../assets/data-src/services/services'
+import type { NewsItem } from '../../../../assets/data-src/blog/blog'
 
 const props = defineProps<{
-  service?: ServiceItem
+  service?: NewsItem
 }>()
 
 const emit = defineEmits<{
@@ -15,7 +15,7 @@ const emit = defineEmits<{
 const contentKey = computed(
   () => props.service?.contentKey ?? 'presentation',
 )
-const { html } = useMarkdownContent('services', contentKey)
+const { html } = useMarkdownContent('blog', contentKey)
 
 const close = () => emit('close')
 </script>
@@ -47,3 +47,6 @@ const close = () => emit('close')
     </div>
   </VueFinalModal>
 </template>
+
+
+

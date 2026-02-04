@@ -9,10 +9,13 @@ const serviceMarkdown = import.meta.glob(
   },
 ) as Record<string, string>
 
-const blogMarkdown = import.meta.glob('../assets/data-src/blog/*.md', {
-  as: 'raw',
-  eager: true,
-}) as Record<string, string>
+const blogMarkdown = import.meta.glob(
+  '../assets/data-src/blog/content/*.md',
+  {
+    as: 'raw',
+    eager: true,
+  },
+) as Record<string, string>
 
 const assetMap = {
   ...import.meta.glob('../assets/imgs-src/**/*.{png,jpg,jpeg,webp,svg}', {

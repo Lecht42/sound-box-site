@@ -39,10 +39,10 @@ const openService = (service: ServiceCard) => {
       v-for="service in serviceCards"
       :key="service.id"
       type="button"
-      class="size-64 bg-card flex flex-col items-center rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-transform duration-300 hover:cursor-pointer text-white text-center overflow-clip p-4"
+      class="size-64 bg-card gap-4 flex flex-col items-center rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-transform duration-300 hover:cursor-pointer text-white text-center overflow-clip p-4"
       @click="openService(service)"
     >
-      <h2 class="mb-4">{{ service.title }}</h2>
+      <h2>{{ service.title }}</h2>
       <img :src="service.imageUrl" :alt="service.title" class="object-scale-down h-full rounded-md" />
     </button>
   </div>

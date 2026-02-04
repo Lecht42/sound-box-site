@@ -48,7 +48,7 @@ const hasGoogleMaps = Boolean(import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
 <template>
   <section class="w-full space-y-6">
     <span class="w-full bg-primary py-2 flex flex-row justify-center font-tektur text-lg md:text-xl">
-      <h1>Контакты</h1>
+      <h1 class="text-black">Контакты</h1>
     </span>
 
     <div class="view flex flex-row flex-wrap gap-8">
@@ -98,17 +98,3 @@ const hasGoogleMaps = Boolean(import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
     </div>
   </section>
 </template>
-
-
-<style scoped>
-.social-icon {
-  width: 4rem;
-  height: 4rem;
-  font-size: 4rem;
-  margin-inline: 0.5rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-}
-</style>
