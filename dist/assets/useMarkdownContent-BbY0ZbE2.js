@@ -1,4 +1,4 @@
-import{_ as C0,a as E0,b as F0,c as A0,d as y0,e as w0,f as v0,g as S0,h as B0,i as T0}from"./photo_9-B4BZWQSi.js";import{d as z0,u as M0}from"./index-KKuAc_Lk.js";const I0=`# Сценические эффекты
+import{_ as C0,a as E0,b as F0,c as A0,d as y0,e as w0,f as v0,g as S0,h as B0,i as T0}from"./photo_9-B4BZWQSi.js";import{d as z0,u as M0}from"./index-Dj0RkG33.js";const I0=`# Сценические эффекты
 
 Добавьте зрелищности вашему событию с помощью профессионального оборудования для сценических эффектов! Мы предлагаем аренду техники в Уфе, которая создаст незабываемую атмосферу на свадьбе, концерте, корпоративе или любом другом мероприятии.
 
