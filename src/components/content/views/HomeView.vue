@@ -76,24 +76,24 @@ const carouselImages = computed(() =>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <p>Порядок:</p>
-                    <ol class="pl-4 list-disc list-inside">
+                    <ul class="pl-4">
                         <li>Осмотр площадки;</li>
                         <li>Формирование ТЗ и бюджета;</li>
                         <li>Подбор оборудования;</li>
                         <li>Доставка, монтаж и настройка;</li>
                         <li>Стабильная работа на мероприятии;</li>
-                    </ol>
+                    </ul>
                 </div>
                 <div>
                     <p>Особенности:</p>
-                    <ol class="pl-4 list-disc list-inside">
+                    <ul class="pl-4">
                         <li>Опытные специалисты;</li>
                         <li>Проверенное оборудование;</li>
                         <li>Соблюдение сроков;</li>
                         <li>Работа с любым бюджетом;</li>
                         <li>Индивидуальные решения;</li>
                         <li>Ответственность за результат;</li>
-                    </ol>
+                    </ul>
                 </div>
             </div>
         </section>

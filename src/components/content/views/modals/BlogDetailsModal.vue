@@ -47,6 +47,3 @@ const close = () => emit('close')
     </div>
   </VueFinalModal>
 </template>
-
-
-

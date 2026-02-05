@@ -2,9 +2,9 @@
 import { computed, ref } from 'vue'
 import { VueAwesomePaginate } from 'vue-awesome-paginate'
 import type { NewsItem } from '../../../assets/data-src/blog/blog'
-import news from '../../../assets/data-src/blog/blog'
 import { useModal } from 'vue-final-modal'
-import DetailsModal from './modals/DetailsModal.vue'
+import DetailsModal from './modals/BlogDetailsModal.vue'
+import news from '../../../assets/data-src/blog/blog'
 
 type NewsCard = NewsItem & { imageUrl: string }
 
