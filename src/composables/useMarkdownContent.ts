@@ -42,9 +42,9 @@ export function useMarkdownContent(
   const sources = categoryMap[category]
 
   const html = computed(() => {
-    const resolvedKey = unref(key)
+    const resolvedKey = unref(key).trim()
     const entry = Object.entries(sources).find(([path]) =>
-      path.endsWith(`/${resolvedKey}.md`),
+      path.toLowerCase().endsWith(`/${resolvedKey.toLowerCase()}.md`),
     )
     const raw =
       entry?.[1] ??
