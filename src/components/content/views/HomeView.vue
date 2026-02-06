@@ -97,7 +97,7 @@ const carouselImages = computed(() =>
                 </div>
             </div>
         </section>
-        <section>
+        <section class="hidden">
             <h2>Опыт</h2>
             <p>
                 Мы более 20ти лет работаем на рынке профессионального звукового и светового оборудования. За это время

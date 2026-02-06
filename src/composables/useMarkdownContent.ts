@@ -17,16 +17,27 @@ const blogMarkdown = import.meta.glob(
   },
 ) as Record<string, string>
 
-const assetMap = {
-  ...import.meta.glob('../assets/imgs-src/**/*.{png,jpg,jpeg,webp,svg}', {
+const rawImageAssets = import.meta.glob(
+  '../assets/imgs-src/**/*.{png,jpg,jpeg,webp,svg}',
+  {
     eager: true,
     as: 'url',
-  }),
-  ...import.meta.glob('../assets/videos-src/**/*.{mp4,webm,ogg}', {
+  },
+) as Record<string, string>
+
+const rawVideoAssets = import.meta.glob(
+  '../assets/videos-src/**/*.{mp4,webm,ogg}',
+  {
     eager: true,
     as: 'url',
-  }),
-} as Record<string, string>
+  },
+) as Record<string, string>
+
+const assetMap = Object.fromEntries(
+  [...Object.entries(rawImageAssets), ...Object.entries(rawVideoAssets)].map(
+    ([path, url]) => [new URL(path, import.meta.url).pathname, url],
+  ),
+) as Record<string, string>
 
 const categoryMap = {
   services: serviceMarkdown,
