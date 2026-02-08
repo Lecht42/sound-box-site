@@ -8,13 +8,6 @@ export type ServiceItem = {
 
 const services: ServiceItem[] = [
   {
-    id: 'presentation',
-    title: 'Презентация',
-    image: 'photo_0',
-    icon: 'bi-easel2',
-    contentKey: 'presentation',
-  },
-  {
     id: 'sound',
     title: 'Звуковое оборудование',
     image: 'photo_0',
