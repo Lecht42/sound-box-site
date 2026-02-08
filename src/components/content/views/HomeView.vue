@@ -25,6 +25,8 @@ const carouselImages = computed(() =>
     alt: `SoundBOX project photo #${index + 1}`,
   })),
 )
+
+const experienceIsHidden =  Boolean(import.meta.env.EXPERIENCE_SECTION_IS_HIDDEN);
 </script>
 
 <template>
@@ -97,7 +99,7 @@ const carouselImages = computed(() =>
                 </div>
             </div>
         </section>
-        <section class="hidden">
+        <section v-if="!experienceIsHidden">
             <h2>Опыт</h2>
             <p>
                 Мы более 20ти лет работаем на рынке профессионального звукового и светового оборудования. За это время
