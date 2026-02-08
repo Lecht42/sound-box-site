@@ -4,6 +4,7 @@ export type ServiceItem = {
   image: string
   icon: string
   contentKey: string
+  active?: boolean
 }
 
 const services: ServiceItem[] = [
@@ -13,6 +14,7 @@ const services: ServiceItem[] = [
     image: 'photo_0',
     icon: 'bi-speaker',
     contentKey: 'sound',
+    active: true,
   },
   {
     id: 'light',
@@ -20,6 +22,7 @@ const services: ServiceItem[] = [
     image: 'photo_0',
     icon: 'bi-lightbulb',
     contentKey: 'light',
+    active: false,
   },
   {
     id: 'stage',
@@ -27,6 +30,7 @@ const services: ServiceItem[] = [
     image: 'photo_0',
     icon: 'bi-mic',
     contentKey: 'stage',
+    active: true,
   },
   {
     id: 'effects',
@@ -34,6 +38,7 @@ const services: ServiceItem[] = [
     image: 'photo_0',
     icon: 'bi-stars',
     contentKey: 'effects',
+    active: true,
   },
   {
     id: 'video',
@@ -41,6 +46,7 @@ const services: ServiceItem[] = [
     image: 'photo_0',
     icon: 'bi-camera-video',
     contentKey: 'video',
+    active: false,
   },
 ]
 

@@ -4,7 +4,7 @@ import type { ServiceItem } from '../../../assets/data-src/services'
 import { useModal } from 'vue-final-modal'
 import ServiceInfoModal from './modals/ServiceInfoModal.vue'
 
-const serviceCards: ServiceItem[] = services
+const serviceCards: ServiceItem[] = services.filter(service => service.active);
 
 const { open, close, patchOptions } = useModal({
   component: ServiceInfoModal,
