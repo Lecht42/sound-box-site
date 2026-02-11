@@ -74,12 +74,20 @@ const hasGoogleMaps = Boolean(import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
           <i class="fa-solid fa-phone mr-2" aria-hidden="true"></i>
           Телефон
         </dt>
+        <dt>
+          <i class="fa-solid fa-phone mr-2" aria-hidden="true"></i>
+          Телефон
+        </dt>
         <dd>
           <a href="tel:79273295521">
             +79273295521
           </a>
         </dd>
 
+        <dt>
+          <i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>
+          E-mail
+        </dt>
         <dt>
           <i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>
           E-mail
