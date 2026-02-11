@@ -26,23 +26,16 @@ const openService = (service: ServiceItem) => {
 </script>
 
 <template>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
     <button
       v-for="service in serviceCards"
       :key="service.id"
       type="button"
-      class="size-64 bg-card gap-4 rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-transform duration-300 hover:cursor-pointer text-white text-center overflow-clip p-4"
+      class="group size-64 bg-card gap-4 rounded-sm shadow-sm hover:shadow-md hover:scale-110 transition-transform duration-300 hover:cursor-pointer text-white text-center overflow-clip p-4"
       @click="openService(service)"
     >
-      <i :class="`bi ${service.icon} service-icon`" aria-hidden="true"></i>
-      <h2>{{ service.title }}</h2>
+      <i class="group-hover:text-link" :class="`service-icon ${service.icon}`" aria-hidden="true"></i>
+      <h2 class="group-hover:text-link">{{ service.title }}</h2>
     </button>
-  </div>
+  </section>
 </template>
-
-<style scoped>
-.service-icon {
-  font-size: 4rem;
-  color: var(--primary);
-}
-</style>

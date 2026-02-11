@@ -43,7 +43,6 @@ const experienceIsHidden =  Boolean(import.meta.env.EXPERIENCE_SECTION_IS_HIDDEN
                 class="w-full max-h-64vh"
                 :modules="[Navigation, Pagination, Autoplay]"
                 :slides-per-view="1"
-                :loop="true"
                 :breakpoints="{
                     768: {
                         slidesPerView: 2,

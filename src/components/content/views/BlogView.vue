@@ -46,7 +46,7 @@ const openService = (service: NewsCard) => {
 </script>
 
 <template>
-    <div class="grid grid-cols-1 gap-4 md:gap-8 w-full">
+    <section class="grid grid-cols-1 gap-4 md:gap-8 w-full">
         <button v-for="newsCard in pagedNewsCards" :key="newsCard.id" type="button"
             class="justify-between gap-4 w-full bg-card flex flex-col items-center rounded-sm shadow-sm hover:shadow-md hover:scale-105 hover:cursor-pointer transition-transform duration-300  text-white text-center overflow-clip p-8"
             @click="openService(newsCard)">
@@ -59,13 +59,7 @@ const openService = (service: NewsCard) => {
                 <img :src="newsCard.imageUrl" :alt="newsCard.title" class="size-46 object-cover rounded-md" />
             </div>
         </button>
-        <div class="flex justify-center pt-4" v-if="totalPages > 1">
-            <VueAwesomePaginate
-                v-model="currentPage"
-                :total-items="totalItems"
-                :items-per-page="perPage"
-                :max-pages-shown="5"
-            />
-        </div>
-    </div>
+        <VueAwesomePaginate class="relative inset-x-1/2 -translate-1/2 w-min mt-8" v-if="totalPages > 1" v-model="currentPage" :total-items="totalItems"
+            :items-per-page="perPage" :max-pages-shown="5" :hide-prev-next="true" />
+    </section>
 </template>
