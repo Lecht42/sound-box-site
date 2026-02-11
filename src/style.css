@@ -52,7 +52,10 @@
   }
   p,
   li {
-    @apply lg:text-base text-white;
+    @apply lg:text-base text-white my-4;
+  }
+  p {
+    @apply text-justify;
   }
   dd, dt {
     @apply my-auto mask-auto text-white text-left font-tektur;
@@ -64,20 +67,13 @@
     @apply pr-0 md:pr-7;
   }
   dl {
-    @apply text-base md:text-lg;
-  }
-  p {
-    @apply text-justify;
-  }
-  p,
-  li {
-    @apply my-4;
+    @apply text-base sm:text-lg md:text-xl;
   }
   section {
     @apply font-prosto-one mb-16;
   }
   button {
-    @apply border border-primary rounded-sm hover:border-link hover:text-link hover:cursor-pointer px-3 py-1 text-xl text-primary font-tektur;
+    @apply border border-primary rounded-sm hover:border-link hover:text-link hover:cursor-pointer px-3 py-1 text-primary font-tektur;
   }
 }
 
@@ -95,7 +91,10 @@
     @apply text-primary text-5xl mb-6;
   } 
   .pagination-container {
-    @apply gap-2
+    @apply gap-2;
+  }
+  .paginate-buttons {
+    @apply size-12 text-xl;
   }
   .active-page {
     @apply bg-primary text-white;

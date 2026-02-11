@@ -13,7 +13,7 @@ const news: NewsItem[] = [
     title: 'Новость 1',
     image: 'photo_0',
     contentKey: 'presentation',
-    description: 'This is the first news item.',
+    description: 'This is the first news item. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
     date: '01.01.2024',
   },
   {
