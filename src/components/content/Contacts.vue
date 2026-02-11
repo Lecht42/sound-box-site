@@ -70,14 +70,20 @@ const hasGoogleMaps = Boolean(import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
     <div class="view flex flex-2 flex-row flex-wrap gap-8">
       <dl class="grid grid-cols-1 gap-y-3 grow">
 
-        <dt>☎ Телефон</dt>
+        <dt>
+          <i class="fa-solid fa-phone mr-2" aria-hidden="true"></i>
+          Телефон
+        </dt>
         <dd>
           <a href="tel:79273295521">
             +79273295521
           </a>
         </dd>
 
-        <dt>✉ E-mail</dt>
+        <dt>
+          <i class="fa-solid fa-envelope mr-2" aria-hidden="true"></i>
+          E-mail
+        </dt>
         <dd>
           <a href="mailto:bogomolovpetr@yandex.ru">
             bogomolovpetr@yandex.ru
@@ -113,13 +119,13 @@ const hasGoogleMaps = Boolean(import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
 
       </dl>
 
-      <GMapMap class="flex-3 rounded-3xl overflow-hidden border border-primary min-w-1/2"
+      <GMapMap class="flex-3 rounded-sm overflow-hidden border border-primary min-w-1/2"
         :center="officePosition" :zoom="15" style="width: 100%; height: 300px" :options="mapOptions"
         v-if="hasGoogleMaps">
         <GMapMarker :position="officePosition" @click="isInfoOpen = !isInfoOpen">
           <GMapInfoWindow :opened="isInfoOpen">
             <label class="text-black font-tektur text-sm sm:text-base lg:text-lg">
-              🏢 г.Уфа, улица Уфимское Шоссе, 39 адрес
+              г. Уфа, ул. Уфимское Шоссе 39
             </label>
           </GMapInfoWindow>
         </GMapMarker>
