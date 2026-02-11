@@ -4,6 +4,7 @@
     url('../assets/fonts-src/Tektur/Tektur.woff2') format('woff2'),
     url('../assets/fonts-src/Tektur/Tektur.woff') format('woff');
   font-display: swap;
+  font-weight: 500;
 }
 
 @font-face {
@@ -12,4 +13,5 @@
     url('../assets/fonts-src/ProstoOne/ProstoOne.woff2') format('woff2'),
     url('../assets/fonts-src/ProstoOne/ProstoOne.woff') format('woff');
   font-display: swap;
+  font-weight: 400;
 }
