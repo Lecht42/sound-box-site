@@ -9,8 +9,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/autoplay'
 
-const navigationOptions: NavigationOptions = { enabled: false }
-const paginationOptions: PaginationOptions = { clickable: true, dynamicBullets: true }
+const paginationOptions: PaginationOptions = { clickable: true }
 const autoplayOptions: AutoplayOptions = {
   delay: 5000,
   disableOnInteraction: false,
@@ -60,7 +59,6 @@ const experienceIsHidden =  Boolean(import.meta.env.EXPERIENCE_SECTION_IS_HIDDEN
                     }
                 }"
                 :autoplay="autoplayOptions as any"
-                :navigation="navigationOptions as any"
                 :pagination="paginationOptions as any"
             >
                 <SwiperSlide v-for="photo in carouselImages" :key="photo.src">

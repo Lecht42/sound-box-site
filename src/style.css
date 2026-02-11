@@ -23,9 +23,10 @@
 
   --swiper-navigation-color: var(--primary);
   --swiper-pagination-color: var(--primary);
-  --swiper-navigation-sides-offset: 1rem;
-  --swiper-pagination-bullet-width: 1rem;
-  --swiper-pagination-bullet-height: 1rem;
+  --swiper-pagination-bullet-inactive-color: white;
+  --swiper-pagination-bullet-inactive-opacity: 0.5;
+  --swiper-pagination-bullet-width: 1.25rem;
+  --swiper-pagination-bullet-height: 1.25rem;
 }
 
 @layer base {
@@ -98,10 +99,6 @@
   }
   .active-page {
     @apply bg-primary text-white;
-  }
-  .swiper-button-next:hover > svg,
-  .swiper-button-prev:hover > svg {
-    @apply text-link;
   }
   .card {
     @apply border-0;
