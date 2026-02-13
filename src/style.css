@@ -88,9 +88,6 @@
   .social-icon.fa-brands {
     @apply text-6xl;
   }
-  .service-icon {
-    @apply text-primary text-5xl mb-6;
-  } 
   .pagination-container {
     @apply gap-2;
   }
@@ -99,8 +96,5 @@
   }
   .active-page {
     @apply bg-primary text-white;
-  }
-  .card {
-    @apply border-0;
   }
 }

@@ -2,9 +2,6 @@
 import { ref } from 'vue'
 
 const officePosition = { lat: 54.7807891, lng: 56.0379087 }
-const cssVar = (varName: string) => {
-  return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
-}
 const darkMapStyle = [
   {
     elementType: "geometry",
@@ -64,7 +61,7 @@ const hasGoogleMaps = Boolean(import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
 <template>
   <section class="w-full space-y-6">
     <span class="w-full bg-primary py-2 flex flex-row justify-center font-tektur text-lg md:text-xl">
-      <h1 class="text-black">Контакты</h1>
+      <h2 class="text-black">Связаться с нами</h2>
     </span>
 
     <div class="view flex flex-2 flex-row flex-wrap gap-8">

@@ -2,7 +2,7 @@
 import { useRoute } from "vue-router";
 import {router} from '../../router';
 
-const routes = router.getRoutes();
+const routes = router.getRoutes().filter((route) => route.meta?.nav);
 const route = useRoute();
 const isCurrent = (path: string) => route.path === path;
 const isCurrentStyle = "text-link underline";
@@ -10,8 +10,8 @@ const isCurrentStyle = "text-link underline";
 
 <template>
     <span class="w-full bg-primary py-2 flex flex-row justify-between">
-        <router-link class="flex-1" v-for="route in routes" :key="route.path" :to="route.path ">
-            <h1  class="text-black hover:text-link" :class="isCurrent(route.path) && isCurrentStyle">{{ route.name }}</h1>
+        <router-link class="flex-1" v-for="route in routes" :key="route.path" :to="route.path" :aria-current="isCurrent(route.path) ? 'page' : undefined">
+            <h1 class="text-black hover:text-link" :class="isCurrent(route.path) && isCurrentStyle">{{ route.name }}</h1>
         </router-link>
     </span>
 
