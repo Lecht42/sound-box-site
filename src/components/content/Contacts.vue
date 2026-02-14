@@ -1,61 +1,69 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 
-const officePosition = { lat: 54.7807891, lng: 56.0379087 }
-const darkMapStyle = [
-  {
-    elementType: "geometry",
-    stylers: [{ color: "#101218" }],
-  },
-  {
-    elementType: "labels.text.fill",
-    stylers: [{ color: "#c7c9cf" }],
-  },
-  {
-    elementType: "labels.text.stroke",
-    stylers: [{ color: "#0b0d11" }],
-  },
-  {
-    featureType: "road",
-    elementType: "geometry",
-    stylers: [{ color: "#1a1d24" }],
-  },
-  {
-    featureType: "road",
-    elementType: "geometry.stroke",
-    stylers: [{ color: "#2a2e37" }],
-  },
-  {
-    featureType: "water",
-    elementType: "geometry",
-    stylers: [{ color: "#0a1a2a" }],
-  },
-  {
-    featureType: "landscape.man_made",
-    elementType: "geometry",
-    stylers: [{ color: "#1f222b" }, { visibility: "on" }],
-  },
-  {
-    featureType: "poi",
-    elementType: "geometry",
-    stylers: [{ color: "#1b1f27" }, { visibility: "on" }],
-  },
-  {
-    featureType: "poi.business",
-    elementType: "labels.text.fill",
-    stylers: [{ color: "#d3d5dc" }, { visibility: "on" }],
-  },
-];
+const mapEl = ref<HTMLDivElement | null>(null)
+let mapInstance: any = null
 
-const mapOptions = {
-  styles: darkMapStyle,
-  disableDefaultUI: true,
-  zoomControl: true,
-  backgroundColor: '#0e0f12',
+const officePosition: [number, number] = [54.787956, 56.055649]
+
+const load2gis = () =>
+  new Promise<void>((resolve, reject) => {
+    const existing = document.querySelector<HTMLScriptElement>(
+      'script[data-2gis-loader="true"]',
+    )
+    if (existing) {
+      const dg = (window as any).DG
+      if (dg) {
+        resolve()
+      } else {
+        existing.addEventListener('load', () => resolve(), { once: true })
+        existing.addEventListener('error', () => reject(new Error('2GIS load error')), {
+          once: true,
+        })
+      }
+      return
+    }
+
+    const script = document.createElement('script')
+    script.src = 'https://maps.api.2gis.ru/2.0/loader.js?pkg=full&skin=dark'
+    script.async = true
+    script.defer = true
+    script.dataset['2gisLoader'] = 'true'
+    script.addEventListener('load', () => resolve(), { once: true })
+    script.addEventListener('error', () => reject(new Error('2GIS load error')), {
+      once: true,
+    })
+    document.head.appendChild(script)
+  })
+
+const initMap = async () => {
+  if (!mapEl.value) return
+  await load2gis()
+  const DG = (window as any).DG
+  if (!DG?.then) return
+  DG.then(() => {
+    const api = (window as any).DG
+    if (!api?.map) return
+    mapInstance = api.map(mapEl.value, {
+      center: officePosition,
+      zoom: 15,
+      theme: 'dark',
+    })
+    const marker = api.marker(officePosition).addTo(mapInstance)
+    marker.bindPopup('г. Уфа, Уфимское шоссе, 39').openPopup()
+  })
 }
 
-const isInfoOpen = ref(true)
-const hasGoogleMaps = Boolean(import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
+onMounted(() => {
+  initMap()
+})
+
+onBeforeUnmount(() => {
+  if (mapInstance && typeof mapInstance.remove === 'function') {
+    mapInstance.remove()
+  }
+  mapInstance = null
+})
 </script>
 
 <template>
@@ -116,20 +124,10 @@ const hasGoogleMaps = Boolean(import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
 
       </dl>
 
-      <GMapMap class="flex-3 rounded-sm overflow-hidden border border-primary min-w-1/2"
-        :center="officePosition" :zoom="15" style="width: 100%; height: 300px" :options="mapOptions"
-        v-if="hasGoogleMaps">
-        <GMapMarker :position="officePosition" @click="isInfoOpen = !isInfoOpen">
-          <GMapInfoWindow :opened="isInfoOpen">
-            <label class="text-black font-tektur text-sm sm:text-base lg:text-lg">
-              г. Уфа, ул. Уфимское Шоссе 39
-            </label>
-          </GMapInfoWindow>
-        </GMapMarker>
-      </GMapMap>
-      <p v-else class="p-6 text-center text-text/70">
-        Карта Google недоступна: проверьте наличие VITE_GOOGLE_MAPS_API_KEY в .env.
-      </p>
+      <div
+        ref="mapEl"
+        class="flex-3 rounded-sm overflow-hidden border border-primary min-w-1/2 h-75">
+      ></div>
     </div>
   </section>
 </template>
