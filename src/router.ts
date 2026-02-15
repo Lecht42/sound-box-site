@@ -74,7 +74,7 @@ export const router = createRouter({
 const defaultTitle = "SoundBOX — техническое обеспечение мероприятий";
 const defaultDescription =
   "Звук, свет, сцена и техническое сопровождение мероприятий. SoundBOX обеспечивает надежную работу оборудования на событиях любого масштаба.";
-const defaultOgImage = "/og-image.png";
+const defaultOgImage = "/og-image.svg";
 
 const upsertMeta = (selector: string, attrs: Record<string, string>) => {
   let element = document.head.querySelector(selector);
@@ -131,6 +131,7 @@ router.afterEach((to) => {
     if (post) {
       title = `${post.title} — блог SoundBOX`;
       description = post.description;
+      ogImage = `${siteUrl}/assets/imgs-src/blog/${post.image}`;
     }
   }
 
