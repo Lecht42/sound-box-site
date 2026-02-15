@@ -76,6 +76,15 @@
   button {
     @apply border border-primary rounded-sm hover:border-link hover:text-link hover:cursor-pointer px-3 py-1 text-primary font-tektur;
   }
+  .content h1,
+  .content h2,
+  .content h3,
+  .content h4, 
+  .content h5, 
+  .content h6,
+  .content p {
+    @apply mt-16;
+  }
 }
 
 @layer components {
