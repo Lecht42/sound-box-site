@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import { useMarkdownContent } from '../../../../composables/useMarkdownContent'
 import type { ServiceItem } from '../../../../assets/data-src/services/services'
-import BaseModal from '../../../elements/BaseModal.vue'
 
 const props = defineProps<{
   service?: ServiceItem

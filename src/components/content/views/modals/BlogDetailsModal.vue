@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import { useMarkdownContent } from '../../../../composables/useMarkdownContent'
 import type { NewsItem } from '../../../../assets/data-src/blog/blog'
-import BaseModal from '../../../elements/BaseModal.vue'
 
 const props = defineProps<{
   service?: NewsItem

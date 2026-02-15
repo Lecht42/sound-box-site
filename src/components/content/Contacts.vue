@@ -47,7 +47,6 @@ const initMap = async () => {
     mapInstance = api.map(mapEl.value, {
       center: officePosition,
       zoom: 15,
-      theme: 'dark',
     })
     const marker = api.marker(officePosition).addTo(mapInstance)
     marker.bindPopup('г. Уфа, Уфимское шоссе, 39').openPopup()

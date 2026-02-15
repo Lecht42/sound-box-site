@@ -9,7 +9,7 @@ type NewsCard = NewsItem & { imageUrl: string }
 const newsCards: NewsCard[] = news.map((service) => ({
   ...service,
   imageUrl: new URL(
-    `../../../assets/imgs-src/blog/${service.image}.jpg`,
+    `../../../assets/imgs-src/blog/${service.image}`,
     import.meta.url,
   ).href,
 }))
