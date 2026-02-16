@@ -40,13 +40,14 @@
   a > * {
     @apply cursor-pointer;
   }
+  .h-like,
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply text-white text-lg md:text-2xl text-center font-tektur;
+    @apply inline-block text-white text-lg md:text-2xl text-center font-tektur;
   }
   ul {
     @apply list-disc list-inside;

@@ -1,9 +1,16 @@
-import { createApp } from 'vue'
+import { ViteSSG } from 'vite-ssg'
 import 'vue-awesome-paginate/dist/style.css'
+import 'vue-final-modal/style.css'
 import './style.css'
 import App from './App.vue'
-import { router } from './router'
+import { routes, setupMeta } from './router'
 
-const app = createApp(App)
-
-app.use(router).mount('#app')
+export const createApp = ViteSSG(
+  App,
+  { routes },
+  ({  router, isClient }) => {
+    if (isClient) {
+      setupMeta(router)
+    }
+  },
+)
