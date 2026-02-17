@@ -93,7 +93,7 @@
 
 @layer components {
   .view {
-    @apply p-4 md:p-12 text-white;
+    @apply p-8 md:py-18 md:px-12 text-white;
   }
   .social-icon {
     @apply transition-transform duration-300 leading-none inline-flex items-center justify-center text-primary hover:text-link hover:fill-link hover:scale-120 align-middle;

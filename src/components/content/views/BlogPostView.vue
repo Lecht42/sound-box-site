@@ -13,7 +13,7 @@ const { html } = useMarkdownContent('blog', contentKey)
 </script>
 
 <template>
-  <section class="w-full space-y-6">
+  <section class="w-full ">
     <nav class="text-sm text-white/70">
       <RouterLink class="hover:text-link" to="/blog">Блог</RouterLink>
       <span class="mx-2">/</span>

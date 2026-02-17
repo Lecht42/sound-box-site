@@ -147,7 +147,7 @@ onBeforeUnmount(() => {
 
     <section>
       <h2>FAQ</h2>
-      <div class="space-y-8">
+      <div">
         <div v-for="item in faqItems" :key="item.question">
           <h3 class="text-left text-base md:text-lg">{{ item.question }}</h3>
           <p class="ml-6">{{ `- ${item.answer}` }}</p>

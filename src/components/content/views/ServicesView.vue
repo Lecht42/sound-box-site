@@ -5,8 +5,8 @@ const serviceCards: ServiceItem[] = services.filter(service => service.active);
 </script>
 
 <template>
-  <section class="w-full space-y-6">
-    <h1 class="text-white text-2xl md:text-3xl text-center font-tektur mb-14">Предоставим</h1>
+  <section class="w-full ">
+    <h1>Предоставим</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center gap-6">
     <router-link
       v-for="service in serviceCards"
