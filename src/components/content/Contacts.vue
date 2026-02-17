@@ -66,7 +66,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="w-full space-y-6">
+  <section class="w-full ">
     <span class="w-full bg-primary py-2 flex flex-row justify-center font-tektur text-lg md:text-xl">
       <h2 class="text-black">Связаться с нами</h2>
     </span>

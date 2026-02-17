@@ -52,14 +52,14 @@ const formatDescription = (description: string) => {
 </script>
 
 <template>
-  <section class="w-full space-y-6">
+  <section class="w-full ">
     <h1>Наша история</h1>
     <router-link v-for="newsCard in pagedNewsCards" :key="newsCard.id" :to="`/blog/${newsCard.id}`"
-      class="border-2 border-primary hover:border-link group justify-between gap-4 w-full h-64 bg-card flex flex-col items-center rounded-sm shadow-sm hover:shadow-md hover:scale-105 hover:cursor-pointer transition-transform duration-300 text-white text-center overflow-clip p-8"
+      class="border-2 border-primary hover:border-link group justify-between gap-4 w-full bg-card flex flex-col items-center rounded-sm shadow-sm hover:shadow-md hover:scale-105 hover:cursor-pointer transition-transform duration-300 text-white text-center overflow-clip p-8"
     >
       <span class="flex flex-row justify-between w-full">
         <h3 class="group-hover:text-link text-left w-fit">{{ newsCard.title }}</h3>
-        <h3 class="group-hover:text-link text-right w-fit">{{ newsCard.date }}</h3>
+        <h3 class="hidden md:block group-hover:text-link text-right w-fit">{{ newsCard.date }}</h3>
       </span>
       <div class="flex flex-col sm:flex-row items-center sm:items-start justify-between w-full gap-4">
         <p class="group-hover:text-link font-prosto-one wrap-anywhere">{{ formatDescription(newsCard.description) }}</p>
