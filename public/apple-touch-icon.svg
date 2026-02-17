@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" rx="32" fill="#0E0F12"/>
+  <rect x="14" y="14" width="152" height="152" rx="28" fill="#16181F" stroke="#F4D508" stroke-width="6"/>
+  <text x="24" y="105" fill="#F4D508" font-size="40" font-family="Arial, sans-serif" font-weight="700">SoundBOX</text>
+</svg>

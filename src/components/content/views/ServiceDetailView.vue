@@ -20,7 +20,7 @@ const { html } = useMarkdownContent('services', contentKey)
       <span>{{ service?.title || 'Услуга' }}</span>
     </nav>
 
-    <h1 class="text-white text-2xl md:text-3xl text-left font-tektur">
+    <h1>
       {{ service?.title || 'Услуга' }}
     </h1>
 

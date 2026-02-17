@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lecht42.github.io/sound-box-site/</loc>
+    <loc>https://soundbox.rent/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lecht42.github.io/sound-box-site/services</loc>
+    <loc>https://soundbox.rent/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lecht42.github.io/sound-box-site/blog</loc>
+    <loc>https://soundbox.rent/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

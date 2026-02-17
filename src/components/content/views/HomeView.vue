@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, watch } from 'vue'
+import { buildFaqJson } from '../../../utils/faqSchema'
+import faqItems from '../../../assets/data-src/faq'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import type { AutoplayOptions, PaginationOptions } from 'swiper/types'
@@ -27,38 +29,7 @@ const carouselImages = computed(() =>
 
 const experienceIsHidden = Boolean(import.meta.env.EXPERIENCE_SECTION_IS_HIDDEN)
 
-const faqItems = [
-  {
-    question: 'Какие услуги вы оказываете?',
-    answer:
-      'Звук, свет, сценические решения и техническое сопровождение мероприятий любого масштаба.',
-  },
-  {
-    question: 'Можно ли подобрать оборудование под бюджет?',
-    answer:
-      'Да, мы подбираем комплектацию под формат, площадку и бюджет заказчика.',
-  },
-  {
-    question: 'Вы работаете с частными и корпоративными событиями?',
-    answer:
-      'Да, сопровождаем частные мероприятия, концерты, ивенты и корпоративные проекты.',
-  },
-]
-
-const faqJson = computed(() =>
-  JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  }),
-)
+const faqJson = computed(() => buildFaqJson(faqItems))
 
 const faqScriptId = 'faq-schema'
 const upsertFaqSchema = () => {
@@ -88,16 +59,23 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="font-prosto-one w-full">
-    <h1 class="text-white text-2xl md:text-3xl text-center font-tektur mb-14">
+    <h1>
       SoundBOX — аппаратура для мероприятий
     </h1>
 
     <section>
       <h2>Мы готовы предоставить вам технику</h2>
       <p>
-        SoundBOX — компания по техническому обеспечению мероприятий звуком и светом.
-        Мы сопровождаем события любого масштаба — от частных праздников до крупных
-        концертов и фестивалей.
+        SoundBOX — это аппаратура для мероприятий, где важны надежность, звук и свет.
+        Мы берем на себя техническое обеспечение мероприятий любого масштаба: от частных
+        праздников и корпоративных событий до концертов, фестивалей и городских площадок.
+        В нашей работе важны безопасность, стабильность и понятная коммуникация с заказчиком.
+      </p>
+      <p>
+        Мы подбираем оборудование под задачу, площадку и бюджет, предоставляем специалистов
+        и сопровождаем проект на всех этапах — от подготовки до последнего включенного прибора.
+        Такой подход помогает избежать сбоев и обеспечивает качественный результат, а ключевые
+        слова из заголовка и title действительно отражают содержание страницы.
       </p>
       <Swiper
         class="w-full max-h-64vh"
@@ -131,8 +109,8 @@ onBeforeUnmount(() => {
     <section>
       <h2>Наши принципы</h2>
       <p>
-        Наш приоритет — результат. Мы отвечаем за технику от момента загрузки до
-        завершения мероприятия и гарантируем стабильную работу оборудования.
+        Наш приоритет — результат. Мы отвечаем за технику от момента загрузки до завершения
+        мероприятия и гарантируем стабильную работу оборудования в реальных условиях.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
@@ -162,8 +140,8 @@ onBeforeUnmount(() => {
     <section v-if="!experienceIsHidden">
       <h2>Опыт</h2>
       <p>
-        Мы более 20 лет работаем на рынке профессионального звукового и светового
-        оборудования и обеспечиваем техническое сопровождение мероприятий разного уровня.
+        Мы более 20 лет работаем на рынке профессионального звукового и светового оборудования
+        и обеспечиваем техническое сопровождение мероприятий разного уровня.
       </p>
     </section>
 
@@ -172,7 +150,7 @@ onBeforeUnmount(() => {
       <div class="space-y-8">
         <div v-for="item in faqItems" :key="item.question">
           <h3 class="text-left text-base md:text-lg">{{ item.question }}</h3>
-          <p class="ml-6">{{ item.answer }}</p>
+          <p class="ml-6">{{ `- ${item.answer}` }}</p>
         </div>
       </div>
     </section>

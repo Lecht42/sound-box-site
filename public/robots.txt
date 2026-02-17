@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lecht42.github.io/sound-box-site/sitemap.xml
+Sitemap: https://soundbox.rent/sitemap.xml
