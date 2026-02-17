@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "build:ssg": "vue-tsc -b && npx vite-ssg build",
+    "build:ssg": "vue-tsc -b && npx vite-ssg build && node zip-dist.cjs",
     "preview": "vite preview --host"
   },
   "dependencies": {
@@ -23,6 +23,7 @@
     "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/tsconfig": "^0.8.1",
+    "archiver": "^7.0.1",
     "typescript": "~5.9.3",
     "vite": "^7.2.4",
     "vite-ssg": "^28.3.0",
