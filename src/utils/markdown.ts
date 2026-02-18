@@ -17,7 +17,8 @@ export function resolveMarkdownAssets(
   assetMap: AssetUrlMap,
 ) {
   if (!basePath) return html
-  const baseUrl = new URL(basePath, window.location.origin).href
+  const origin = typeof window !== 'undefined' ? window.location.origin : 'http://localhost'
+  const baseUrl = new URL(basePath, origin).href
 
   return html.replace(ASSET_ATTR_RE, (_match, attr, url, hash = '') => {
     const resolvedPath = new URL(url, baseUrl).pathname

@@ -34,8 +34,17 @@ const rawVideoAssets = import.meta.glob(
 ) as Record<string, string>
 
 const assetMap = Object.fromEntries(
-  [...Object.entries(rawImageAssets), ...Object.entries(rawVideoAssets)].map(
-    ([path, url]) => [new URL(path, import.meta.url).pathname, url],
+  [...Object.entries(rawImageAssets), ...Object.entries(rawVideoAssets)].flatMap(
+    ([path, url]) => {
+      const pathname = new URL(path, import.meta.url).pathname
+      const entries: [string, string][] = [[pathname, url]]
+      if (pathname.startsWith('/src/')) {
+        entries.push([pathname.replace(/^\/src/, ''), url])
+      } else if (pathname.startsWith('/assets/')) {
+        entries.push([`/src${pathname}`, url])
+      }
+      return entries
+    },
   ),
 ) as Record<string, string>
 
